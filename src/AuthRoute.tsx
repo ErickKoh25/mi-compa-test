@@ -1,10 +1,10 @@
-import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
-import { selectGeneral } from "./redux/store";
+import { useAppContext } from "./context/AppProvider";
 
 export const RequireAuth = ({ children }: any) => {
-  const { login:{token} } = useSelector(selectGeneral);
-  if (!token) {
+  const { initState } = useAppContext();
+  console.log(initState)
+  if (!initState?.login.token) {
     return <Navigate to="/" replace />;
   } else {
     return children;

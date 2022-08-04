@@ -1,22 +1,18 @@
 import { Field, FieldProps, Form, Formik } from "formik";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-// import { useDispatch } from "react-redux";
 import { useAppContext } from "../../../context/AppProvider";
 import { ActionButton } from "../../../components/ActionButton";
 import InputTextIcon from "../../../components/InputTextIcon/InputTextIcon";
 import { LOGIN } from "../../../constants/constants";
 import { formAuth, initValuesAuth } from "../../../constants/schemas";
 import useLocalStorage from "../../../hooks/useLocalStorage";
-import { setLogin } from "../../../redux/slices";
 import { authService } from "../../../services/formRequest";
 import showToast, { closeToast } from "../../../utils/notificationToast";
-import { useDispatch } from "react-redux";
 
 const FormContainer = () => {
-  const { navigate } = useAppContext();
+  const { navigate, setLogin } = useAppContext();
   const [token, setToken] = useLocalStorage("token", null);
-  const dispatch = useDispatch();
 
   const handleSubmit = async (data: object) => {
     closeToast();
@@ -24,13 +20,13 @@ const FormContainer = () => {
       let response = await authService(data);
       if (response.status === 201) {
         setToken(response.data.password);
-        dispatch(
+        if (setLogin) {
           setLogin({
             name: response.data.name,
             email: response.data.email,
             token: response.data.password,
-          })
-        );
+          });
+        }
         if (navigate) {
           navigate("/panel");
         }

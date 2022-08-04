@@ -5,21 +5,16 @@ import { NavLink } from "react-router-dom";
 import useLocalStorage from "../../hooks/useLocalStorage";
 import { Else, If, Then } from "react-if";
 import { useAppContext } from "../../context/AppProvider";
-import { useDispatch, useSelector } from "react-redux";
-import { removeLogin } from "../../redux/slices";
-import { selectGeneral } from "../../redux/store";
 
 const NavBar = () => {
   const [token, setToken] = useLocalStorage("token", null);
-  const {
-    login: { token: tokenRedux },
-  } = useSelector(selectGeneral);
-  const dispatch = useDispatch();
-  const { navigate } = useAppContext();
-
+  const { navigate, initState, removeLogin } = useAppContext();
+  
   const logout = () => {
     setToken(null);
-    dispatch(removeLogin());
+    if (removeLogin) {
+      removeLogin({ name: "", email: "", token: "" });
+    }
     if (navigate) {
       navigate("/");
     }
@@ -40,7 +35,7 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
-            <If condition={token || tokenRedux}>
+            <If condition={token || initState?.login.token}>
               <Then>
                 <NavLink to="" className="nav-link">
                   Inicio

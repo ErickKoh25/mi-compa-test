@@ -1,18 +1,22 @@
 
-// type TypeActions = {
-//     type: 'setLogin',
-//     payload: payload
-// } | { type: 'removeLogin' };
+import { InitialStateProps, LoginProps } from '../interfaces/context/AppContextProvider';
 
-// export const reducer = (state, action:TypeActions) => {
-//     switch (key) {
-//         case value:
-//             break;
-//         case value:
-//             break;
-//         default:
-//             return state;
-//     }
-// }
+type TypeActions = |
+{
+    type: 'setLogin',
+    payload: LoginProps
+}
+    | { type: 'removeLogin', payload: LoginProps } | { type: 'addStates', payload: Array<{}> };
 
-export const reducer = ""
+export const todoReducer = (state: InitialStateProps, action: TypeActions) => {
+    switch (action.type) {
+        case 'setLogin':
+            return { ...state, login: action.payload }
+        case 'removeLogin':
+            return { ...state, login: action.payload }
+        case 'addStates':
+            return { ...state, states: action.payload }
+        default:
+            return state;
+    }
+}

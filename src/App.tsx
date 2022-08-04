@@ -1,5 +1,4 @@
 import React from "react";
-// import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { env } from "./config/config";
 import { Home } from "./modules/Home";
@@ -12,8 +11,6 @@ import { Panel } from "./modules/Panel";
 import { Login } from "./modules/Login";
 import { injectStyle } from "react-toastify/dist/inject-style";
 import { ToastContainer } from "react-toastify";
-import { Provider } from "react-redux";
-import store from "./redux/store";
 import { RequireAuth } from "./AuthRoute";
 
 const App = () => {
@@ -22,7 +19,6 @@ const App = () => {
   }
   return (
     <BrowserRouter basename={env.basePath}>
-      <Provider store={store}>
         <AppProvider>
           <ToastContainer />
           <NavBar />
@@ -50,7 +46,6 @@ const App = () => {
           </Routes>
           <Footer />
         </AppProvider>
-      </Provider>
     </BrowserRouter>
   );
 };
