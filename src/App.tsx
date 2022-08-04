@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { env } from "./config/config";
 import { Home } from "./modules/Home";
 import { Contact } from "./modules/Contact";
 import NavBar from "./components/NavBar";
@@ -18,7 +17,7 @@ const App = () => {
     injectStyle();
   }
   return (
-    <BrowserRouter basename={env.basePath}>
+    <BrowserRouter>
         <AppProvider>
           <ToastContainer />
           <NavBar />

@@ -1,10 +1,10 @@
 import React from "react";
-import GoogleMap from "../../../../components/GoogleMap";
+import { GoogleMapComponent } from "../../../../components/GoogleMapComponent";
 
 const MapContainer = ({coords, setCoords, readOnly,setSearchAddres}:any) => {
   return (
     <div>
-      <GoogleMap
+      <GoogleMapComponent
         options={{
           gestureHandling: "none",
           zoomControl: true,

@@ -11,7 +11,7 @@ export const initialValues = {
   city: "",
   state: "",
   country: "",
-  coords: []
+  coords: [21.1455737,-101.6909461]
 };
 
 export const initValuesAuth = {

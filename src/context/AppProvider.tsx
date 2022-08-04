@@ -14,7 +14,7 @@ const useAppContext = () => {
 };
 
 let INIT_STATE = {
-  states: [],
+  states: [{}],
   login: {
     name: "",
     email: "",
