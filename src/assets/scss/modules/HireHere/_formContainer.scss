@@ -1,0 +1,18 @@
+.cont-hire-form{
+    height: 85vh;
+    .title-form{
+        margin-bottom: 0;
+        text-align: center;
+      @include text-style(
+        $size: 40px,
+        $weight: 600,
+        $style: normal,
+        $color: $title-secondary
+      );
+    }
+    .cont-form-btn{
+      text-align: center;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+}

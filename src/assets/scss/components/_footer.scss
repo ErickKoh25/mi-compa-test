@@ -1,0 +1,98 @@
+.footer {
+  width: 100%;
+  height: 200px;
+  background-color: $primary;
+  @include inline-flex;
+  .footer-contact {
+    margin: auto;
+    div {
+      color: $white;
+      display: flex;
+      &:first-child{
+        margin-bottom: 10px;
+      }
+      span {
+        cursor: pointer;
+        display: block;
+        margin-right: 15px;
+        color: $tertiary;
+        &:hover {
+          color: $secondary;
+          transition: 0.3s ease-out;
+          a,
+          i {
+            color: $secondary;
+            transition: 0.3s ease-in;
+          }
+        }
+      }
+    }
+  }
+  .footer-logo {
+    margin: auto;
+    text-align: center;
+    img {
+        width: 50%;
+    }
+    div {
+      color: $white;
+    }
+  }
+  .footer-social-media {
+    margin: auto;
+    div {
+      @include inline-flex;
+      span {
+        margin-left: 10px;
+        margin-right: 10px;
+        color: $tertiary;
+        width: 40px !important;
+        height: 40px;
+        border-radius: 25px;
+        border: 1px $tertiary solid;
+        cursor: pointer;
+        transition: 0.3s ease-out;
+        @include inline-flex;
+        &:hover {
+          color: $secondary;
+          border: 1px $secondary solid;
+          transition: 0.3s ease-in;
+        }
+      }
+    }
+  }
+}
+
+@include media(xs) {
+  .footer {
+    height: auto;
+    @include inline-flex($display: block);
+    text-align: center;
+    .contact,
+    .logo-footer,
+    .social-media {
+      width: 100%;
+      text-align: center;
+    }
+    .logo-footer {
+      display: none;
+    }
+    .contact,
+    .social-media {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      box-sizing: border-box;
+    }
+    .contact {
+      span {
+        margin-left: 0;
+      }
+    }
+    .social-media {
+      margin-bottom: 20px;
+      h2 {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
