@@ -42,7 +42,7 @@
     margin: auto;
     div {
       @include inline-flex;
-      span {
+      span a {
         margin-left: 10px;
         margin-right: 10px;
         color: $tertiary;
@@ -63,35 +63,27 @@
   }
 }
 
-@include media(xs) {
+@include media("sm") {
+  .footer{
+    height: auto;
+    .footer-logo, .footer-contact, .footer-social-media {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+}
+@include media("md") {
   .footer {
     height: auto;
     @include inline-flex($display: block);
     text-align: center;
-    .contact,
-    .logo-footer,
-    .social-media {
-      width: 100%;
-      text-align: center;
-    }
-    .logo-footer {
-      display: none;
-    }
-    .contact,
-    .social-media {
+    .footer-logo, .footer-contact, .footer-social-media {
       padding-top: 20px;
       padding-bottom: 20px;
-      box-sizing: border-box;
     }
-    .contact {
-      span {
-        margin-left: 0;
-      }
-    }
-    .social-media {
-      margin-bottom: 20px;
-      h2 {
-        margin-bottom: 20px;
+    .footer-contact {
+      div {
+        display: block;
       }
     }
   }

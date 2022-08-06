@@ -80,7 +80,7 @@ const CardContainer = () => {
           <Row>
             <When condition={loading}>
               {arraySkeleton.map((item) => (
-                <Col key={`col-skeleton-${item}`} sm="12" lg="3">
+                <Col key={`col-skeleton-${item}`} sm="12" md="6" lg="4">
                   <CardSkeleton key={`skeleton-${item}`} />
                 </Col>
               ))}
@@ -89,7 +89,7 @@ const CardContainer = () => {
             <If condition={cardsData && cardsData.length > 0}>
               <Then>
                 {cardsData.map((item: initialProps, i: number) => (
-                  <Col key={i} lg="3">
+                  <Col key={i} sm="12" md="6" lg="4">
                     <CardAddress
                       address={item}
                       editAddress={() => {

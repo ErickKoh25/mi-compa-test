@@ -1,24 +1,55 @@
-.cont-login{
-    min-height: 85vh;
-    .cont-login-form{
-        height: 40%;
-        width: 30%;
-        position: absolute;
-        margin: auto;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-radius: 15px;
-        background-color: $white;
-        @include boxes-container($width: 30%, $height:30%, $min-height: 360px, $display:block, $hsl: 1px, $vsl: 1px, $blur: 11px, $spr: 1px);
-        .container {
-            padding-top: 40px;
-        }
-        .cont-login-btn{
-            text-align: center;
-            padding-top: 20px;
-            padding-bottom: 20px;
-        }
+.cont-login {
+  min-height: 85vh;
+  .cont-login-form {
+    height: 40%;
+    width: 30%;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    background-color: $white;
+    @include boxes-container(
+      $width: 30%,
+      $height: 30%,
+      $min-height: 360px,
+      $display: block,
+      $hsl: 1px,
+      $vsl: 1px,
+      $blur: 11px,
+      $spr: 1px
+    );
+    .container {
+      padding-top: 40px;
     }
+    .cont-login-btn {
+      text-align: center;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
 }
+
+@include media("md") {
+  .cont-login {
+    .cont-login-form {
+      width: 50%;
+    }
+  }
+}
+@include media("sm") {
+    .cont-login {
+      .cont-login-form {
+        width: 70%;
+      }
+    }
+  }
+  @include media("xs") {
+    .cont-login {
+      .cont-login-form {
+        width: 80%;
+      }
+    }
+  }

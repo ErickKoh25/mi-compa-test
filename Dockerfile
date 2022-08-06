@@ -10,9 +10,7 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 3001/tcp
-
-CMD ["npm", "run", "start:dev"]
+CMD ["npm", "run", "build"]
 
 
 # FROM node:14.7.0

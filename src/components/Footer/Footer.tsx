@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import logo from "../../assets/img/micompalogo.webp";
 import { IconsFooterProps } from "../../interfaces/components/Footer";
-import {FOOTER_CONSTANTS} from "../../constants/constants"
+import { FOOTER_CONSTANTS } from "../../constants/constants";
 
 const Footer = () => {
-  const [icons] = useState<IconsFooterProps>(FOOTER_CONSTANTS)
+  const [icons] = useState<IconsFooterProps>(FOOTER_CONSTANTS);
   return (
     <div className="footer">
       <Container>
@@ -33,13 +33,19 @@ const Footer = () => {
           <Col sm="12" lg="4" className="footer-social-media">
             <div>
               <span>
-                <icons.fb />
+                <a href="https://www.facebook.com/micompatecuida" target="_blank" rel="noreferrer">
+                  <icons.fb />
+                </a>
               </span>
               <span>
-                <icons.in />
+                <a href="https://www.instagram.com/micompa_seguros/" target="_blank" rel="noreferrer">
+                  <icons.in />
+                </a>
               </span>
               <span>
-                <icons.insta />
+                <a href="https://www.linkedin.com/company/mi-compa/" target="_blank" rel="noreferrer">
+                  <icons.insta />
+                </a>
               </span>
             </div>
           </Col>

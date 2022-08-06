@@ -8,8 +8,9 @@ import { useAppContext } from "../../context/AppProvider";
 
 const NavBar = () => {
   const [token, setToken] = useLocalStorage("token", null);
-  const { navigate, initState, removeLogin } = useAppContext();
-  
+  const { navigate, initState, removeLogin } = useAppContext()
+  console.log(initState)
+  console.log(token);
   const logout = () => {
     setToken(null);
     if (removeLogin) {
@@ -35,7 +36,7 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
-            <If condition={token || initState?.login.token}>
+            <If condition={token || initState?.login.token !== ""}>
               <Then>
                 <NavLink to="" className="nav-link">
                   Inicio

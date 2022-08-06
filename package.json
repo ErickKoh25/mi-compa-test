@@ -38,7 +38,7 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "start:build": "webpack --config webpack/webpack.config.js --mode=production --progress ",
+    "start:build": "webpack --config webpack/webpack.config.js --mode=production",
     "start": "webpack serve --config webpack/webpack.config.js --mode development",
     "start:dev": "react-scripts start",
     "build": "react-scripts build",

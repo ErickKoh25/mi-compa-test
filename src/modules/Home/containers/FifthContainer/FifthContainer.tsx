@@ -22,18 +22,6 @@ const FifthContainer = () => {
               ))}
             </When>
           </Col>
-          {/* <When condition={newsPapers && newsPapers.length > 0}>
-            {newsPapers.map((item) => (
-              <Col sm="12" md="6" lg="4" className="box-news-papers">
-                <img
-                  className="img-news-papers"
-                  key={item.alt}
-                  alt={item.alt}
-                  src={item.image}
-                />
-              </Col>
-            ))}
-          </When> */}
         </Row>
       </Container>
     </div>

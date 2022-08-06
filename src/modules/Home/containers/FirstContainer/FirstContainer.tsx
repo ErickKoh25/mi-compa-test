@@ -37,12 +37,12 @@ const FirstContainer = () => {
           <img
             alt="mi-compa-logo"
             src={image}
-            className="d-inline-block align-top"
+            className="d-inline-block align-top img-user"
           />
         </Col>
       </Row>
       <Row>
-        <Col className="content-hire-here">
+        <Col className="content-hire-here relative">
           <Box
             className={"hire-here"}
             title="LAS ASEGURADORAS MÁS CHIDAS NOS RESPALDAN"

@@ -26,7 +26,7 @@ const Box = ({
                 <Col
                   key={`Col-${i}`}
                   sm="12"
-                  md="12"
+                  md="6"
                   lg="6"
                   className="content-img"
                 >

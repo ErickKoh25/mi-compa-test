@@ -10,7 +10,7 @@ const OfferBox = ({ objectIcons }: ArrayOfferProps) => {
       <Row>
         <When condition={objectIcons && objectIcons.length > 0}>
           {objectIcons.map((item, i) => (
-            <Col key={`item-${i}`} sm="3" md="4" lg="4">
+            <Col key={`item-${i}`} sm="6" md="4" lg="4">
               <CardBox index={`item-${i}`} item={item} />
             </Col>
           ))}
