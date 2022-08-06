@@ -1,4 +1,5 @@
 {
+  "homepage": "http://ErickKoh25.github.io/mi-compa-test",
   "name": "mi-compa-test",
   "version": "0.1.0",
   "private": true,
@@ -41,6 +42,8 @@
     "start:build": "webpack --config webpack/webpack.config.js --hot --mode production --progress",
     "start": "webpack serve --config webpack/webpack.config.js --mode development",
     "start:dev": "react-scripts start",
+    "predeploy": "webpack --config webpack/webpack.config.js --hot --mode production --progress",
+    "deploy": "gh-pages -d dist",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -68,6 +71,7 @@
     "@types/react-geocode": "^0.2.1",
     "css-loader": "^6.7.1",
     "dotenv-webpack": "^8.0.0",
+    "gh-pages": "^4.0.0",
     "html-loader": "^4.1.0",
     "interpolate-html-plugin": "^4.0.0",
     "style-loader": "^3.3.1",
