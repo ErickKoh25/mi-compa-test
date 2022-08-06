@@ -1,5 +1,5 @@
 import { env } from "../config/config";
-
+console.log(env)
 const { api } = env
 export const endpoints = {
     states: () => `${api}states`,

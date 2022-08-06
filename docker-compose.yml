@@ -1,0 +1,18 @@
+version: "3.5"
+
+services:
+  micompa-webapp:
+    image: node:14.7.0
+    container_name: micompa-webapp
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    restart: "always"
+    env_file:
+      - .env
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/home/webapp
+      - /usr/src/webapp/node_modules
+    # command: npm run start:dev
