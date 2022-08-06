@@ -6,11 +6,11 @@ COPY package.json ./
 
 COPY package-lock.json ./
 
-RUN npm install 
+# RUN npm install 
 
-COPY . .
+COPY ./dist .
 
-CMD ["npm", "run", "build"]
+# CMD ["npm", "run", "build"]
 
 
 # FROM node:14.7.0

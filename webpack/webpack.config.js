@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 
 module.exports = (env, arg) => {
+  console.log(path.join(__dirname,"./dist"))
   return {
     mode: arg.mode,
     entry: [
