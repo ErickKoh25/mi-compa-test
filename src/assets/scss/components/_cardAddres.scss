@@ -1,0 +1,42 @@
+.card-address {
+  width: 100%;
+  border-radius: 15px;
+  background-color: $white;
+  margin-bottom: 20px;
+  @include boxes-container(
+    $width: 100%,
+    $height: 150px,
+    $min-height: 150px,
+    $display: block,
+    $hsl: 1px,
+    $vsl: 1px,
+    $blur: 12px,
+    $spr: -3px
+  );
+  .cont-card-items {
+    padding: 20px 15px 20px 15px;
+    height: 100%;
+    position: relative;
+    .card-title {
+      color: $secondary;
+      font-size: 16px;
+      padding-bottom: 5px;
+    }
+    .card-subtitle {
+      font-size: 15px;
+    }
+    .card-actions {
+        height: auto;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        span {
+            cursor: pointer;
+            padding: 5px;
+            &:hover {
+                color:$secondary;
+            }
+        }
+    }
+  }
+}

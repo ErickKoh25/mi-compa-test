@@ -1,0 +1,17 @@
+node_modules
+static
+npm-debug.log
+
+# Others
+.idea
+.gitlab
+.ci-scripts
+*.md
+Makefile
+docker/provision/*.sql
+deploy
+.gitlab-ci.yml
+
+# Docker
+Dockerfile
+docker-compose.yml

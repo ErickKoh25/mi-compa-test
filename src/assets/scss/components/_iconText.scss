@@ -1,0 +1,23 @@
+.field-icon-container, .field-select-container {
+  .inner-icon-left {
+    position: absolute;
+    left: 15px;
+    top: 6px;
+    bottom: 0px;
+    color: $primary;
+    font-size: 20px;
+    &.error {
+      color: $errors;
+    }
+  }
+  .inner-icon-right {
+    position: absolute;
+    right: 15px;
+    top: 6px;
+    color: $primary;
+    font-size: 20px;
+    &.error {
+        color: $errors;
+    }
+  }
+}
