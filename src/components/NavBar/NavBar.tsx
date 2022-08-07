@@ -9,8 +9,7 @@ import { useAppContext } from "../../context/AppProvider";
 const NavBar = () => {
   const [token, setToken] = useLocalStorage("token", null);
   const { navigate, initState, removeLogin } = useAppContext()
-  console.log(initState)
-  console.log(token);
+
   const logout = () => {
     setToken(null);
     if (removeLogin) {
@@ -23,7 +22,7 @@ const NavBar = () => {
   return (
     <Navbar collapseOnSelect fixed="top" expand="lg" bg="light" variant="light">
       <Container>
-        <NavLink to="">
+        <NavLink to="home">
           <Navbar.Brand href="#home" className="navbar-brand">
             <img
               alt="mi-compa-logo"
@@ -38,7 +37,7 @@ const NavBar = () => {
           <Nav>
             <If condition={token || initState?.login.token !== ""}>
               <Then>
-                <NavLink to="" className="nav-link">
+                <NavLink to="hire-here" className="nav-link">
                   Inicio
                 </NavLink>
                 <NavLink to="panel" className="nav-link">
@@ -51,7 +50,7 @@ const NavBar = () => {
                 </Nav.Link>
               </Then>
               <Else>
-                <NavLink to="login" className="nav-link">
+                <NavLink to="hire-here" className="nav-link">
                   Login
                 </NavLink>
               </Else>

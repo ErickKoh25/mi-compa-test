@@ -13,6 +13,9 @@ export const getStates = () => {
   const config = {
     method: "get",
     url: endpoints.states(),
+    headers: {
+      "Access-Control-Allow-Origin" : "*"
+    }
   };
   return axios(config);
 };
@@ -21,6 +24,9 @@ export const getAddress = () => {
   const config = {
     method: "get",
     url: endpoints.getAddress(),
+    headers: {
+      "Access-Control-Allow-Origin" : "*"
+    }
   };
   return axios(config);
 };
@@ -29,6 +35,9 @@ export const getAddressById = (id: string) => {
   const config = {
     method: "get",
     url: endpoints.getAddressById(id),
+    headers: {
+      "Access-Control-Allow-Origin" : "*"
+    }
   };
   return axios(config);
 };
@@ -38,6 +47,9 @@ export const postAddress = (data: any) => {
     method: "post",
     url: endpoints.postDataHireHere(),
     data,
+    headers: {
+      "Access-Control-Allow-Origin" : "*"
+    }
   };
   return axios(config);
 };
@@ -48,6 +60,9 @@ export const saveEditAddress = (data: any) => {
     method: "patch",
     url: endpoints.editAddress(data._id),
     data,
+    headers: {
+      "Access-Control-Allow-Origin" : "*"
+    }
   };
 
   return axios(config);
@@ -57,6 +72,9 @@ export const deleteAddress = (id: string) => {
   const config = {
     method: "delete",
     url: endpoints.deleteAddress(id),
+    headers: {
+      "Access-Control-Allow-Origin" : "*"
+    }
   };
 
   return axios(config);
@@ -67,6 +85,9 @@ export const authService = (data: object) => {
     method: "post",
     url: endpoints.login(),
     data,
+    headers: {
+      "Access-Control-Allow-Origin" : "*"
+    }
   };
 
   return axios(config);

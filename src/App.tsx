@@ -23,7 +23,6 @@ const App = () => {
           <NavBar />
           <Routes>
             <Route index element={<Home />} />
-            <Route path="/contact" element={<Contact />} />
             <Route path="/hire-here" element={<HireHere />} />
             <Route
               path="/panel"
