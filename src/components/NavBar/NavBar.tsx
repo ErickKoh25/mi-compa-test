@@ -9,14 +9,13 @@ import { useAppContext } from "../../context/AppProvider";
 const NavBar = () => {
   const [token, setToken] = useLocalStorage("token", null);
   const { navigate, initState, removeLogin } = useAppContext()
-
   const logout = () => {
     setToken(null);
     if (removeLogin) {
       removeLogin({ name: "", email: "", token: "" });
     }
     if (navigate) {
-      navigate("/");
+      navigate("/home");
     }
   };
   return (
@@ -37,7 +36,7 @@ const NavBar = () => {
           <Nav>
             <If condition={token || initState?.login.token !== ""}>
               <Then>
-                <NavLink to="hire-here" className="nav-link">
+                <NavLink to="home" className="nav-link">
                   Inicio
                 </NavLink>
                 <NavLink to="panel" className="nav-link">
@@ -50,7 +49,7 @@ const NavBar = () => {
                 </Nav.Link>
               </Then>
               <Else>
-                <NavLink to="hire-here" className="nav-link">
+                <NavLink to="login" className="nav-link">
                   Login
                 </NavLink>
               </Else>

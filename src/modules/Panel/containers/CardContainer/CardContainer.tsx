@@ -36,7 +36,7 @@ const CardContainer = () => {
 
   const redirectEditAddress = (id: string) => {
     if (navigate) {
-      navigate(`/panel/edit-address/${id}`);
+      navigate(`/edit-address/${id}`);
     }
   };
   const removeAddress = async (id: string) => {
